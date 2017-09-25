@@ -1,7 +1,9 @@
-package com.github.diwakar1988.array;
+package com.github.diwakar1988.strings;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.github.diwakar1988.strings.StringUtils;
 
 public class StringUtilsTest {
 

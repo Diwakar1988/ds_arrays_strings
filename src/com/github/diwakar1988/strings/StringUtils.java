@@ -1,4 +1,4 @@
-package com.github.diwakar1988.array;
+package com.github.diwakar1988.strings;
 
 public class StringUtils {
 
