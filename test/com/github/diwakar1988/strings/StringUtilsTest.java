@@ -1,5 +1,8 @@
 package com.github.diwakar1988.strings;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,5 +39,18 @@ public class StringUtilsTest {
 		Assert.assertEquals("12346",StringUtils.addBigNumbers("12323","23"));
 		Assert.assertEquals("198123",StringUtils.addBigNumbers("12","198111"));
 	}
+	@Test
+	public void testGetPermutions() {
+		ArrayList<String>listOutput=new ArrayList<>();
+		listOutput.add("ABC");
+		listOutput.add("ACB");
+		listOutput.add("BAC");
+		listOutput.add("BCA");
+		listOutput.add("CBA");
+		listOutput.add("CAB");
+		Assert.assertTrue(StringUtils.getPermutions("ABC").size()==6);
+		Assert.assertTrue(StringUtils.getPermutions("ABC").equals(listOutput));
+	}
+
 
 }

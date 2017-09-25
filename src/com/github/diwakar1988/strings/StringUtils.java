@@ -1,5 +1,7 @@
 package com.github.diwakar1988.strings;
 
+import java.util.ArrayList;
+
 public class StringUtils {
 
 	public static String getExcelColumnTitle(int columnNumber) {
@@ -102,6 +104,30 @@ public class StringUtils {
 	    
 	    return str.reverse().toString();
 	}
+	public static ArrayList<String> getPermutions(String str) {
+		ArrayList<String> list=new ArrayList<>();
+		permute(new StringBuilder(str), 0, str.length()-1, list);
+		return list;
+	}
+	private static void permute(StringBuilder str, int l, int r,ArrayList<String> list)
+	{
+		if (l == r)
+			list.add(str.toString());
+		else
+		{
+			for (int i = l; i <= r; i++)
+			{
+				swap(str,l,i);
+				permute(str, l+1, r,list);
+				swap(str,l,i);
+			}
+		}
+	}
 
+	private static void swap(StringBuilder str, int index1, int index2) {
+			char ch = str.charAt(index1);
+			str.setCharAt(index1, str.charAt(index2));
+			str.setCharAt(index2, ch);
+	}
 
 }
