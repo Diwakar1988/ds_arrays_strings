@@ -32,4 +32,9 @@ public class ArrayUtilsTest {
 		Assert.assertTrue(ArrayUtils.hasPairSum(new int[]{10,2,7,4,9},19));
 		Assert.assertFalse(ArrayUtils.hasPairSum(new int[]{10,2,7,4,9},21));
 	}
+	@Test
+	public void testMergeSortedArrays() {
+		int[] result=ArrayUtils.mergeSortedArrays(new int[]{1,2,3},new int[]{1,1,1});
+		Assert.assertTrue(Arrays.equals(result, new int[]{1,1,1,1,2,3}));
+	}
 }
